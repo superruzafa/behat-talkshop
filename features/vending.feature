@@ -1,3 +1,4 @@
+@all
 Feature: Vending machine
   In order to save costs
   As a boss

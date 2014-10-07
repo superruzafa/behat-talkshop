@@ -1,0 +1,6 @@
+default:
+  autoload:
+    'BehatTalkshop': %paths.base%/features
+  suites:
+    default:
+      contexts: [BehatTalkshop\VendingMachineContext]

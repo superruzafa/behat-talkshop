@@ -1,13 +1,14 @@
 <?php
 
+namespace BehatTalkshop;
+
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
-use BehatTalkshop\VendingMachine;
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext implements Context, SnippetAcceptingContext
+class VendingMachineContext implements Context, SnippetAcceptingContext
 {
     /** @var VendingMachine */
     private $vendingMachine;
@@ -40,7 +41,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function thereAreLeftInTheVendingMachine($count, $product)
     {
-        PHPUnit_Framework_Assert::assertEquals($count, $this->vendingMachine->getStock($product));
+        \PHPUnit_Framework_Assert::assertEquals($count, $this->vendingMachine->getStock($product));
     }
 
     /**
@@ -62,7 +63,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
     public function theEmployeeReceives($count, $products)
     {
         $expected = $count ? array_fill(0, $count, $products) : array();
-        PHPUnit_Framework_Assert::assertEquals($expected, $this->pickedUp);
+        \PHPUnit_Framework_Assert::assertEquals($expected, $this->pickedUp);
     }
 
     /**
@@ -86,7 +87,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function anErrorMessageIsDisplayded()
     {
-        PHPUnit_Framework_Assert::assertTrue($this->exceptionThrown);
+        \PHPUnit_Framework_Assert::assertTrue($this->exceptionThrown);
     }
 
     /**
