@@ -1,0 +1,10 @@
+{
+    "name": "superruzafa/behat-talkshop",
+    "description": "Behat talkshop code",
+    "authors": [
+        {
+            "name": "Alfonso Ruzafa",
+            "email": "superruzafa@gmail.com"
+        }
+    ]
+}
