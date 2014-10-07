@@ -46,8 +46,13 @@ class VendingMachine
             throw new \RuntimeException("The vending machine doesn't serve any $product");
         }
 
-        $products = array_fill(0, min($count, $this->productStock[$product]), $product);
-        $this->productStock[$product] = max(0, $this->productStock[$product] - $count);
+        $number = min($count, $this->productStock[$product]);
+        if ($number == 0) {
+            $products = array();
+        } else {
+            $products = array_fill(0, $number, $product);
+            $this->productStock[$product] = max(0, $this->productStock[$product] - $count);
+        }
 
         return $products;
     }
